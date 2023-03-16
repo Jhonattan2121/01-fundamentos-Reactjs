@@ -32,8 +32,11 @@ function handleNewCommentChange() {
     setNewCommentText(event.target.value);
 }
 
-function deleteComment(comment) {
-console.log(`deletar comentário ${comment }`);
+function deleteComment(commentToDelete) {
+    const commentsWithoutDeletedOne = comments.filter( comment => {
+        return comment !== commentToDelete;
+    });
+    setComments(commentsWithoutDeletedOne);
 }
 
 return (
